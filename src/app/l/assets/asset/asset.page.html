@@ -1,0 +1,40 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/l/assets"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button href="/l/assets/asset/{{passedAssetDetails.id}}/create-lease">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Asset Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list style="background-color: #f4f5f8; padding: 0px 32px;">
+    <h1 style="font-weight:700;">{{passedAssetDetails.name}}</h1>
+    {{passedAssetDetails.address}}
+    <br><br>
+  </ion-list>
+  <ion-list lines="none" class="ion-padding">
+    <ion-item *ngFor="let leaser of asset[id]" detail="true" button="true">
+      <ion-icon name="receipt-outline" slot="start"></ion-icon>
+      <ion-label>
+        <h3 style="font-weight:700;">{{ leaser?.name }}</h3>
+        <ion-note>{{ leaser?.note||'No comments' }}</ion-note>
+      </ion-label>
+      <p><ion-note>{{ leaser?.schedule }}, ${{ leaser?.amount }}</ion-note></p>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <div class="ion-text-center">
+      <ion-label>Create a lease then provide the leaser with the url.</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-footer>

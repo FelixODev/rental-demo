@@ -19,7 +19,11 @@ export const routes: Routes = [
     loadComponent: () => import('./l/create-asset/create-asset.page').then( m => m.CreateAssetPage)
   },
   {
-    path: 'l/create-lease',
-    loadComponent: () => import('./l/create-lease/create-lease.page').then( m => m.CreateLeasePage)
+    path: 'l/assets/asset/:id',
+    loadComponent: () => import('./l/assets/asset/asset.page').then( m => m.AssetPage)
+  },
+  {
+    path: 'l/assets/asset/:id/create-lease',
+    loadComponent: () => import('./l/assets/asset/create-lease/create-lease.page').then( m => m.CreateLeasePage)
   },
 ];

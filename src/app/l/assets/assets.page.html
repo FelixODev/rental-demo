@@ -15,10 +15,10 @@
     *ngFor="let asset of assets"
     detail="true"
     button="true"
-    href="/l/create-lease">
+    href="/l/assets/asset/{{asset.id}}">
       <ion-icon slot="start" [name]="(asset.type=='house')?'home':'business'"></ion-icon>
       <ion-label>
-        <h2>{{ asset?.name }}</h2>
+        <h2 style="font-weight:700;">{{ asset?.name }}</h2>
         <p>{{ asset?.address }}</p>
         <p>Leasers: {{ asset?.leasers||0 }}</p>
       </ion-label>

@@ -15,6 +15,7 @@ export class AssetsPage implements OnInit {
 
   public assets: any[] = [
     {
+      id: "98092384390228402",
       name: "Germaine Terrace",
       address: "1232 Camel St, San Diego CA 92101",
       leasers: 4,

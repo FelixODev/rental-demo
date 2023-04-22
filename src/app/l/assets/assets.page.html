@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button href="/l/create-asset">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Assets</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let asset of assets">
+      <ion-icon slot="start" name="business"></ion-icon>
+      <ion-label>
+        <h2>{{ asset.name }}</h2>
+        <p>Leasers: {{ asset.leasers }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <div class="ion-text-center">
+      <ion-label>Add your properties to the list to manage all of your collections.</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-footer>

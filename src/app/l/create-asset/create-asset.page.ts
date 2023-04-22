@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-create-asset',
@@ -14,12 +14,20 @@ export class CreateAssetPage implements OnInit {
 
   public asset: any = {
     name: '',
-    type: ''
+    leasers: 0,
+    type: '',
+    address: ''
   };
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    this.navCtrl.navigateBack('/l/assets',{
+      state: this.asset
+    })
   }
 
 }

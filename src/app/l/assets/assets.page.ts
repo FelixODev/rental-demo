@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-assets',
@@ -15,11 +16,19 @@ export class AssetsPage implements OnInit {
   public assets: any[] = [
     {
       name: "Germaine Terrace",
-      leasers: 4
+      address: "1232 Camel St, San Diego CA 92101",
+      leasers: 4,
+      type: "Apartment"
     }
   ];
 
-  constructor() { }
+  constructor(public router: Router){
+    if (this.router.getCurrentNavigation()?.extras.state){
+      const item = this.router.getCurrentNavigation()?.extras.state||{};
+      if(item['name']!='')
+        this.assets.push(item);
+    }
+  }
 
   ngOnInit() {
   }

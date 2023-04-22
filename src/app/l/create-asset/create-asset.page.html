@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/l/assets"></ion-back-button>
     </ion-buttons>
@@ -9,19 +9,47 @@
 
 <ion-content mode="ios">
 
-  <ion-list lines="none" class="ion-margin ion-padding">
-    <ion-item color="light">
-      <ion-label position="stacked">Name</ion-label>
-      <ion-input type="text" [(ngModel)]="asset.name" name="name"></ion-input>
+  <ion-list lines="none" 
+  class="ion-padding ion-margin-horizontal">
+    <ion-item 
+    color="light"
+    >
+      <ion-input
+      label="Name"
+      type="text"
+      [(ngModel)]="asset.name"
+      labelPlacement="floating"
+      name="name"></ion-input>
     </ion-item>
-    <ion-item color="light">
-      <ion-label position="stacked">Type</ion-label>
-      <ion-select [(ngModel)]="asset.type" name="type">
+    <ion-item 
+    color="light"
+    >
+      <ion-input
+      label="Address"
+      type="text"
+      [(ngModel)]="asset.address"
+      labelPlacement="floating"
+      name="address"></ion-input>
+    </ion-item>
+    <ion-item 
+    color="light"
+    >
+      <ion-select
+      label="Type" 
+      interface="ios"
+      mode="md"
+      [(ngModel)]="asset.type" 
+      name="type"
+      labelPlacement="floating"
+      >
         <ion-select-option value="house">House</ion-select-option>
         <ion-select-option value="apartment">Apartment</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-button expand="block">Save Asset</ion-button>
+    <ion-button 
+    expand="block"
+    (click)="onSubmit()"
+    >Save Asset</ion-button>
   </ion-list>
 
 </ion-content>

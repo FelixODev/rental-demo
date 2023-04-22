@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
     <ion-buttons slot="end">
       <ion-button href="/l/create-asset">
         <ion-icon name="add"></ion-icon>
@@ -10,12 +10,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let asset of assets">
-      <ion-icon slot="start" name="business"></ion-icon>
+  <ion-list class="ion-padding" lines="none">
+    <ion-item 
+    *ngFor="let asset of assets"
+    detail="true"
+    button="true"
+    href="/l/create-lease">
+      <ion-icon slot="start" [name]="(asset.type=='house')?'home':'business'"></ion-icon>
       <ion-label>
-        <h2>{{ asset.name }}</h2>
-        <p>Leasers: {{ asset.leasers }}</p>
+        <h2>{{ asset?.name }}</h2>
+        <p>{{ asset?.address }}</p>
+        <p>Leasers: {{ asset?.leasers||0 }}</p>
       </ion-label>
     </ion-item>
   </ion-list>

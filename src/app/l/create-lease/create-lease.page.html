@@ -1,0 +1,33 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/l/assets"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create Lease</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios">
+  <ion-list class="ion-padding ion-margin-horizontal" lines="none">
+    <ion-item color="light">
+      <ion-input type="text" [(ngModel)]="lease.firstName" label="First Name" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-item color="light">
+      <ion-input type="text" [(ngModel)]="lease.lastName" label="Last Name" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-item color="light">
+      <ion-input type="email" [(ngModel)]="lease.email" label="Email" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-item color="light">
+      <ion-input type="number" [(ngModel)]="lease.amount" label="Amount" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-item color="light">
+      <ion-input type="date" [(ngModel)]="lease.startDate" label="Start Date" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-item color="light">
+      <ion-input type="date" [(ngModel)]="lease.endDate" label="End Date" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="onSubmit()">Submit</ion-button>
+  </ion-list>
+  
+</ion-content>

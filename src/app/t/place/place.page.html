@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Property</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios">
+  <ion-list style="background-color: #f4f5f8; padding: 0px 32px;">
+    <h1 style="font-weight:700;">{{prop?.name}}</h1>
+    {{prop?.address}}
+    <br><br>
+  </ion-list>
+  <ion-searchbar type="email" placeholder="Email" >
+    <ion-button slot="end">
+      <ion-icon slot="icon-only" name="search"></ion-icon>
+    </ion-button>
+  </ion-searchbar>
+</ion-content>
+<!-- (ionInput)="onSearch($event.target)" -->

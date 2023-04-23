@@ -26,4 +26,8 @@ export const routes: Routes = [
     path: 'l/assets/asset/:id/create-lease',
     loadComponent: () => import('./l/assets/asset/create-lease/create-lease.page').then( m => m.CreateLeasePage)
   },
+  {
+    path: 't/place/:id',
+    loadComponent: () => import('./t/place/place.page').then( m => m.PlacePage)
+  },
 ];

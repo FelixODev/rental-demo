@@ -13,10 +13,22 @@
     {{prop?.address}}
     <br><br>
   </ion-list>
-  <ion-searchbar type="email" placeholder="Email" >
-    <ion-button slot="end">
+  <ion-searchbar
+  search-icon="search-circle"
+  [debounce]="1000"
+  (ionInput)="onSearch($event)" 
+  type="email"
+  placeholder="Enter email here" >
+    <!-- <ion-button slot="end" size="small">
       <ion-icon slot="icon-only" name="search"></ion-icon>
-    </ion-button>
+    </ion-button> -->
   </ion-searchbar>
 </ion-content>
-<!-- (ionInput)="onSearch($event.target)" -->
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <div class="ion-text-center">
+      <ion-label>Enter your email to navigate to the lease.</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-footer>

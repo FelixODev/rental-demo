@@ -1,0 +1,11 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Auto Payment Setup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <p *ngFor="let ob of lease | keyvalue">
+    {{ob?.key }}: {{ob?.value}}
+  </p>
+</ion-content>

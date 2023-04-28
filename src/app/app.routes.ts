@@ -30,4 +30,8 @@ export const routes: Routes = [
     path: 't/place/:id',
     loadComponent: () => import('./t/place/place.page').then( m => m.PlacePage)
   },
+  {
+    path: 't/lease/:email',
+    loadComponent: () => import('./t/lease/lease.page').then( m => m.LeasePage)
+  },
 ];
